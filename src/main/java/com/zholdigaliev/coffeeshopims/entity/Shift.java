@@ -1,0 +1,35 @@
+package com.zholdigaliev.coffeeshopims.entity;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
+
+@Entity @Table(name = "shifts")
+public class Shift {
+
+    @Id @GeneratedValue
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "branch_id")
+    private Branch branch;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "opened_by")
+    private User openedBy;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "closed_by", nullable = true)
+    private User closedBy; // null пока смена открыта
+
+    @Enumerated(EnumType.STRING)
+    private ShiftStatus status; // OPEN / CLOSED
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime openedAt;
+
+    private LocalDateTime closedAt; // null пока OPEN
+
+    private String notes;
+}
