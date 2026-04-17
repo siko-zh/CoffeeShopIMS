@@ -1,6 +1,8 @@
 package com.zholdigaliev.coffeeshopims.dto.CategoryDto;
+import lombok.Data;
 
-public class Request {
+@Data
+public class CategoryRequest {
 
     private String name;
 

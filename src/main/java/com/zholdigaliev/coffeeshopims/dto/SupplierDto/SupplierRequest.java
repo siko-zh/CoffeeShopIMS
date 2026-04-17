@@ -1,8 +1,8 @@
 package com.zholdigaliev.coffeeshopims.dto.SupplierDto;
+import lombok.Data;
 
-public class Response {
-
-    private Long id;
+@Data
+public class SupplierRequest {
 
     private String name;
 

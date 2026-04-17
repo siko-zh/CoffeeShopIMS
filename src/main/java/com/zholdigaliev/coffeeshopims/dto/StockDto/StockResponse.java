@@ -1,8 +1,10 @@
 package com.zholdigaliev.coffeeshopims.dto.StockDto;
 
 import java.math.BigDecimal;
+import lombok.Data;
 
-public class Response {
+@Data
+public class StockResponse {
     private Long id;
 
     private Long productId;
@@ -11,7 +13,7 @@ public class Response {
 
     private Long branchId;
 
-    private Long branchName;
+    private String branchName;
 
     private BigDecimal quantity;
 

@@ -1,6 +1,8 @@
 package com.zholdigaliev.coffeeshopims.dto.BranchDto;
+import lombok.Data;
 
-public class Response {
+@Data
+public class BranchResponse {
 
     private Long id;
 

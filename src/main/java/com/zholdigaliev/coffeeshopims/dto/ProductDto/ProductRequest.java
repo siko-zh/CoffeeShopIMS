@@ -3,14 +3,12 @@ package com.zholdigaliev.coffeeshopims.dto.ProductDto;
 import com.zholdigaliev.coffeeshopims.entity.Unit;
 
 import java.math.BigDecimal;
+import lombok.Data;
 
-public class Response {
-
-    private Long id;
+@Data
+public class ProductRequest {
 
     private String name;
-
-    private String description;
 
     private Unit unit;
 
@@ -18,9 +16,5 @@ public class Response {
 
     private Long categoryId;
 
-    private String categoryName;
-
     private Long supplierId;
-
-    private String supplierName;
 }

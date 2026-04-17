@@ -1,6 +1,8 @@
 package com.zholdigaliev.coffeeshopims.dto.CategoryDto;
+import lombok.Data;
 
-public class Response {
+@Data
+public class CategoryResponse {
 
     private Long id;
 

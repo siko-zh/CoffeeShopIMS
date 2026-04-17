@@ -1,6 +1,8 @@
 package com.zholdigaliev.coffeeshopims.dto.BranchDto;
+import lombok.Data;
 
-public class Request {
+@Data
+public class BranchRequest {
 
     private String name;
 
