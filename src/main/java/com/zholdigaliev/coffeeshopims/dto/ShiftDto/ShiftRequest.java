@@ -3,7 +3,5 @@ import lombok.Data;
 
 @Data
 public class ShiftRequest {
-    private Long branchId;
-
     private String notes;
 }
