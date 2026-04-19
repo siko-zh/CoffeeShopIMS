@@ -27,5 +27,8 @@ public class Supplier {
     @Column(nullable = false)
     private String phone;
 
+    @Column(columnDefinition = "boolean default true")
+    private boolean isActive = true;
+
     private String email;
 }

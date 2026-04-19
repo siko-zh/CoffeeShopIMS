@@ -10,6 +10,8 @@ public class ProductRequest {
 
     private String name;
 
+    private String description;
+
     private Unit unit;
 
     private BigDecimal price;
