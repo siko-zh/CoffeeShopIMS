@@ -9,5 +9,5 @@ public interface StockService {
     List<StockResponse> getByBranch(Long branchId);
     List<StockResponse> getLowStock(Long branchId);
     StockResponse setMinQuantity(Long id, BigDecimal minQuantity);
-    StockResponse writeOff(Long id, BigDecimal quantity, String reason);
+    StockResponse writeOff(Long branchId, Long productId, BigDecimal quantity, String reason);
 }

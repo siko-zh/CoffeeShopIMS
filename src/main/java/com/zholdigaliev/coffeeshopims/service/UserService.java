@@ -10,5 +10,6 @@ public interface UserService {
     List<UserResponse> getAll();
     UserResponse getById(Long id);
     UserResponse update(Long id, UserRequest request);
+    void updatePassword(Long id, String oldPassword, String newPassword);
     void delete(Long id);
 }
