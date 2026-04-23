@@ -4,8 +4,9 @@ import com.zholdigaliev.coffeeshopims.dto.BranchDto.BranchRequest;
 import com.zholdigaliev.coffeeshopims.dto.BranchDto.BranchResponse;
 import com.zholdigaliev.coffeeshopims.entity.Branch;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface BranchMapper {
     BranchResponse toResponse(Branch branch);
 

@@ -10,8 +10,8 @@ import org.mapstruct.Mapping;
 public interface ShiftMapper {
     
     @Mapping(source = "branch.name", target = "branchName")
-    @Mapping(source = "user.username", target = "openedByUsername")
-    @Mapping(source = "user.username", target = "closedByUsername")
+    @Mapping(source = "openedBy.username", target = "openedByUsername")
+    @Mapping(source = "closedBy.username", target = "closedByUsername")
     ShiftResponse toResponse(Shift shift);
     
     Shift toEntity(ShiftRequest request);
