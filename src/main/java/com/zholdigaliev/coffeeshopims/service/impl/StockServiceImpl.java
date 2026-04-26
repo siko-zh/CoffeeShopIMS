@@ -61,7 +61,8 @@ public class StockServiceImpl implements StockService {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product not found: " + productId));
 
-        Stock stock = stockRepository.findStockByBranchAndProduct(branch, product);
+        Stock stock = stockRepository.findStockByBranchAndProduct(branch, product).
+                orElseThrow(() -> new RuntimeException("Branch and Product not found"));
 
         if (stock.getQuantity().compareTo(quantity) < 0) {
             throw new RuntimeException("Out of stock");
