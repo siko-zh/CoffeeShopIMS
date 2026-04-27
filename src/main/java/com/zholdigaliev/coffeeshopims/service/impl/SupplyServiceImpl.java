@@ -8,7 +8,6 @@ import com.zholdigaliev.coffeeshopims.dto.mapper.SupplyMapper;
 import com.zholdigaliev.coffeeshopims.entity.*;
 import com.zholdigaliev.coffeeshopims.repository.*;
 import com.zholdigaliev.coffeeshopims.service.SupplyService;
-import jdk.jshell.Snippet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +34,6 @@ public class SupplyServiceImpl implements SupplyService {
     private final SupplyItemMapper supplyItemMapper;
 
     @Override
-    @Transactional
     public SupplyResponse create(SupplyRequest request) {
         Supplier supplier = supplierRepository.findById(request.getSupplierId())
                 .orElseThrow(() -> new RuntimeException("Supplier not found: " + request.getSupplierId()));
@@ -132,7 +130,6 @@ public class SupplyServiceImpl implements SupplyService {
             StockMovement movement = new StockMovement();
             movement.setProduct(item.getProduct());
             movement.setBranch(supply.getBranch());
-            movement.setCreatedBy(currentUser);
             movement.setType(MovementType.IN);
             movement.setQuantity(item.getQuantity());
             movement.setReason("Accept supply #" + supply.getId());
