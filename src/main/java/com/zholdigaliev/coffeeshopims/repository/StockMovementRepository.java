@@ -1,6 +1,7 @@
 package com.zholdigaliev.coffeeshopims.repository;
 
 import aj.org.objectweb.asm.commons.Remapper;
+import com.zholdigaliev.coffeeshopims.entity.Shift;
 import com.zholdigaliev.coffeeshopims.entity.StockMovement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,4 +17,6 @@ public interface StockMovementRepository extends JpaRepository<StockMovement, Lo
     List<StockMovement> findAllByBranchIdAndCreatedAtBetween(Long branchId, LocalDateTime start, LocalDateTime end);
 
     Page<StockMovement> findAllByBranchId(Long branchId, Pageable pageable);
+
+    List<StockMovement> findAllByShift(Shift shift);
 }

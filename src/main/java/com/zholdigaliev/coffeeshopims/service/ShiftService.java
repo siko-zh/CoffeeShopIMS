@@ -11,5 +11,5 @@ public interface ShiftService {
     ShiftResponse closedByUser(Long id, Long userId);
     ShiftResponse getActiveByBranch(Long branchId);
     List<ShiftResponse> getAllByBranch(Long branchId);
-    List<StockMovementResponse> getMovementsByShift(Long shiftId);
+    List<StockMovementResponse> getMovementsByShift(Long id);
 }
