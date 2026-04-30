@@ -36,7 +36,9 @@ public class UserServiceImpl implements UserService {
         user.setBranch(branchRepository.findById(request.getBranchId()).
                 orElseThrow(() -> new RuntimeException("Branch not found: " + request.getBranchId())));
 
-        return mapper.toResponse(user);
+        User saved = userRepository.save(user);
+
+        return mapper.toResponse(saved);
     }
 
     @Override

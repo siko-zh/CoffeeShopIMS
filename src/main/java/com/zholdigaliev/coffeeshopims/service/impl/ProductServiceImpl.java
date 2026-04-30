@@ -53,6 +53,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductResponse> getAllByCategoryId(Long categoryId) {
+        return productRepository.findAllByCategoryId(categoryId).stream()
+                .toList();
+    }
+
+    @Override
     public ProductResponse getById(Long id) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found: " + id));

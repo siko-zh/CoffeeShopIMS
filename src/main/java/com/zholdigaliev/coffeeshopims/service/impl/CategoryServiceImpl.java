@@ -47,9 +47,9 @@ public class CategoryServiceImpl implements CategoryService {
         category.setName(request.getName());
         category.setDescription(request.getDescription());
 
-        categoryRepository.save(category);
+        Category saved = categoryRepository.save(category);
 
-        return mapper.toResponse(category);
+        return mapper.toResponse(saved);
     }
 
     @Override

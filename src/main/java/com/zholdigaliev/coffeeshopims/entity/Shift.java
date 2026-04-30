@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 @Entity @Table(name = "shifts")
 public class Shift {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

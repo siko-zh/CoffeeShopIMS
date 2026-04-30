@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Transfer {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

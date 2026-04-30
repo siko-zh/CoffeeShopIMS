@@ -26,8 +26,7 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public List<StockResponse> getByBranch(Long branchId) {
-        return stockRepository.findAll().stream()
-                .filter(s-> s.getBranch().getId().equals(branchId))
+        return stockRepository.findAllByBranchId(branchId).stream()
                 .map(mapper::toResponse)
                 .toList();
     }

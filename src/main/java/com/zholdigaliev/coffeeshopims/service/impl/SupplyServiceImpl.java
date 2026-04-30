@@ -93,8 +93,7 @@ public class SupplyServiceImpl implements SupplyService {
 
     @Override
     public List<SupplyResponse> getAllByBranch(Long branchId) {
-        return supplyRepository.findAll().stream()
-                .filter(s -> s.getBranch().getId().equals(branchId))
+        return supplyRepository.findAllByBranchId(branchId).stream()
                 .map(mapper::toResponse)
                 .toList();
     }
@@ -153,6 +152,8 @@ public class SupplyServiceImpl implements SupplyService {
 
         supply.setStatus(SupplyStatus.CANCELLED);
 
-        return mapper.toResponse(supply);
+        Supply saved = supplyRepository.save(supply);
+
+        return mapper.toResponse(saved);
     }
 }
